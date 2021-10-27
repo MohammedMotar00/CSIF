@@ -32,6 +32,7 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-around;
+  align-items: center;
   margin: 0 auto;
 `;
 
@@ -53,7 +54,6 @@ export const Image = styled.img`
 `;
 
 export const DrawerContainer = styled.div`
-  margin-top: 5px;
   display: none !important;
   @media (max-width: 850px) {
     display: block !important;

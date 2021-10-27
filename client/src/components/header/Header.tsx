@@ -43,9 +43,9 @@ const Header = () => {
           <p>Kontakt</p>
         </LinksContainer>
 
+        <HamburgerBtn />
         <LoginContainer>Logga in</LoginContainer>
       </Container>
-      <HamburgerBtn />
     </HeaderContainer>
   );
 };
