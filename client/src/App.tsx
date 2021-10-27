@@ -6,12 +6,14 @@ import {
   RouteComponentProps,
 } from "react-router-dom";
 import routes from "./routes";
-import "./App.css";
+import Header from "./components/header/Header";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Router>
+        {/* Header component, visible on all pages! */}
+        <Header />
         <Switch>
           {routes.map((route, index) => (
             <Route
