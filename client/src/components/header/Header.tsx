@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 import Logo from "../../assets/CSIF2.jpg";
 import HamburgerBtn from "./HamburgerBtn";
 
@@ -11,7 +13,10 @@ import {
   LoginContainer,
 } from "./styles";
 
+import { Links } from "./Links";
+
 const Header = () => {
+  const location = useLocation();
   const [scrollShow, setScrollShow] = useState<string>("");
 
   const pageScroll = () => {
@@ -23,24 +28,26 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", pageScroll);
-    return () => window.removeEventListener("scroll", pageScroll);
-  }, []);
+    if (location.pathname !== "/") {
+      setScrollShow("#222");
+    } else {
+      setScrollShow("");
+      window.addEventListener("scroll", pageScroll);
+      return () => window.removeEventListener("scroll", pageScroll);
+    }
+  }, [location.pathname]);
 
   return (
     <HeaderContainer scrollShow={scrollShow}>
       <Container>
-        <ImageContainer>
-          <Image src={Logo} />
-        </ImageContainer>
+        <Link to="/">
+          <ImageContainer>
+            <Image src={Logo} />
+          </ImageContainer>
+        </Link>
 
         <LinksContainer>
-          <p>Hem</p>
-          <p>Nyheter</p>
-          <p>Kalender</p>
-          <p>Bildgalleri</p>
-          <p>Dokument</p>
-          <p>Kontakt</p>
+          <Links />
         </LinksContainer>
 
         <HamburgerBtn />
