@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { IconButton, makeStyles, Drawer } from "@material-ui/core";
+import { IconButton, Drawer } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 import { DrawerContainer } from "./styles";
 import { MenuLinks } from "./Links";
 
 // Icons
-import MenuIcon from "@material-ui/icons/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles: any = makeStyles((theme: any) => ({
   root: {
-    width: "100%",
+    width: "100% !important",
   },
   drawerContainer: {},
   iconButtonContainer: {
-    marginLeft: "auto",
-    color: "orange",
+    marginLeft: "auto !important",
+    color: "orange !important",
   },
 
   menuIconToggle: {
-    fontSize: "2.5rem",
+    fontSize: "2.5rem !important",
   },
 }));
 
-const HamburgerBtn = () => {
+const HamburgerBtn: React.FC = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const pageResize = () => {

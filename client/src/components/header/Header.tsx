@@ -6,14 +6,14 @@ import HamburgerBtn from "./HamburgerBtn";
 
 import {
   HeaderContainer,
-  Container,
+  HeaderInnerContainer,
   ImageContainer,
   Image,
   LinksContainer,
-  LoginContainer,
 } from "./styles";
 
 import { Links } from "./Links";
+import Login from "./Login";
 
 const Header = () => {
   const location = useLocation();
@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <HeaderContainer scrollShow={scrollShow}>
-      <Container>
+      <HeaderInnerContainer>
         <Link to="/">
           <ImageContainer>
             <Image src={Logo} />
@@ -51,8 +51,8 @@ const Header = () => {
         </LinksContainer>
 
         <HamburgerBtn />
-        <LoginContainer>Logga in</LoginContainer>
-      </Container>
+        <Login />
+      </HeaderInnerContainer>
     </HeaderContainer>
   );
 };

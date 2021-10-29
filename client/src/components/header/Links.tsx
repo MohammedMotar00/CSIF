@@ -3,27 +3,27 @@ import {
   List,
   ListItemIcon,
   ListItemText,
-  makeStyles,
-  withStyles,
-} from "@material-ui/core";
+  ListItemButton as MuiListItem,
+} from "@mui/material";
+
+import { makeStyles, withStyles } from "@mui/styles";
+
 import { Link } from "react-router-dom";
 
-import MuiListItem from "@material-ui/core/ListItem";
-
-import HomeIcon from "@material-ui/icons/Home";
-import CalendarIcon from "@material-ui/icons/Today";
-import NewsIcon from "@material-ui/icons/Receipt";
-import PhotoAlbumIcon from "@material-ui/icons/PhotoAlbum";
-import DescriptionIcon from "@material-ui/icons/Description";
-import ContactPageIcon from "@material-ui/icons/Contacts";
+import HomeIcon from "@mui/icons-material/Home";
+import CalendarIcon from "@mui/icons-material/Today";
+import NewsIcon from "@mui/icons-material/Receipt";
+import PhotoAlbumIcon from "@mui/icons-material/PhotoAlbum";
+import DescriptionIcon from "@mui/icons-material/Description";
+import ContactPageIcon from "@mui/icons-material/Contacts";
 
 const MenuListItem = withStyles({
   root: {
     "&:hover": {
-      backgroundColor: "#444",
+      backgroundColor: "#444 !important",
 
       "& .MuiListItemIcon-root": {
-        color: "white",
+        color: "white !important",
       },
     },
   },
@@ -33,10 +33,10 @@ const MenuListItem = withStyles({
 const ListItem = withStyles({
   root: {
     "&:hover": {
-      backgroundColor: "#5c4614",
+      backgroundColor: "#5c4614 !important",
 
       "& .MuiListItemIcon-root": {
-        color: "white",
+        color: "white !important",
       },
     },
   },
@@ -48,6 +48,7 @@ export const Links = () => {
   const styles = makeStyles((styles) => ({
     listItemText: {
       fontSize: "1.2rem",
+      color: "white",
     },
 
     listItemIcon: {
@@ -106,7 +107,7 @@ export const Links = () => {
     <>
       {allLinks.map((link, index) => (
         <Link to={link.link} className={classes.linkStyle} key={index}>
-          <ListItem key={index} button>
+          <ListItem key={index}>
             <div>
               <ListItemIcon className={classes.listItemIcon}>
                 {link.icon}
@@ -204,7 +205,6 @@ export const MenuLinks = ({ setOpenDrawer }: Props) => {
             key={index}
             className={classes.listItem}
             divider
-            button
             onClick={() => setOpenDrawer(false)}
           >
             <div className={classes.item}>

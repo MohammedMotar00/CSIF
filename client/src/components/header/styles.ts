@@ -28,7 +28,7 @@ export const LinksContainer = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const HeaderInnerContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -55,6 +55,8 @@ export const Image = styled.img`
 
 export const DrawerContainer = styled.div`
   display: none !important;
+  /* border: 1px solid green; */
+  margin-left: 13px;
   @media (max-width: 850px) {
     display: block !important;
     text-align: center;
